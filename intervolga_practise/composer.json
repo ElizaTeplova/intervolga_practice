@@ -1,0 +1,17 @@
+{
+    "name": "mrbab/intervolga_practise",
+    "description": "A PHP Application for consuming csv",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Framework\\": "src/Framework",
+            "App\\": "src/App"
+        }
+    },
+    "scripts" : {
+        "intervolga" : "php cli.php"
+    }
+}

@@ -15,7 +15,12 @@ $url = "https://api-metrika.yandex.net/management/v1/counter/{$_ENV['COUNTER_ID'
 $authorization = "Authorization: Bearer " . $_ENV['TOKEN'];
 $params = new RequestParams();
 
-$logApi->getCsvData($_ENV['COUNTER_ID'], $_ENV['TOKEN'], $params->getParams());
-$logApi->createLogs($_ENV['COUNTER_ID'], $_ENV['TOKEN'], $params->getParams());
-$logApi->getPartNumbers($_ENV['COUNTER_ID'], $_ENV['TOKEN'], requestId: '');
-$logApi->downloadParts($_ENV['COUNTER_ID'], $_ENV['TOKEN'], requestId: '', partNums: 2);
+$url = "https://api-metrika.yandex.net/management/v1/counter/{$_ENV['COUNTER_ID']}/logrequests";
+$authorization = "Authorization: Bearer " . $_ENV['TOKEN'];
+$params = new RequestParams(date1: date('Y-m-d', strtotime('-91 days')));
+
+$logApi->getCsvData($_ENV['COUNTER_ID'], $_ENV['TOKEN'], $params->getParams(), false);
+// $logApi->evaluateRequest($counterId, $token, $params->getParams());
+// $logApi->createLogs($_ENV['COUNTER_ID'], $_ENV['TOKEN'], $params->getParams());
+// $logApi->getPartNumbers($_ENV['COUNTER_ID'], $_ENV['TOKEN'], requestId: '');
+// $logApi->downloadParts($_ENV['COUNTER_ID'], $_ENV['TOKEN'], requestId: '33774523', partNums: 2);

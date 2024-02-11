@@ -5,6 +5,7 @@
 - Composer использует [PSR-4: Autoloader](https://www.php-fig.org/psr/psr-4/) и [phpdotenv](https://github.com/vlucas/phpdotenv)
 - Необходимо запустить `composer install` в командной строке для загрузки зависимостей.
 - Запускать код можно из командной строки `composer run-script intervolga` на уровне composer.json
+- Полученный выходной файл должен быть на уровне cli.php в формате "log_counter_{$counterId}\_request_{$requestId}_all.csv"
 
 ## Структура проекта
 ```
